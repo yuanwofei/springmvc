@@ -1,4 +1,4 @@
-package com.fayuan.web;
+package com.fayuan.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
