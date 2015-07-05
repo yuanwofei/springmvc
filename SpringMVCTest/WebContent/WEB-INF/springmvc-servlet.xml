@@ -19,18 +19,17 @@
 	
 	<context:component-scan base-package="com.fayuan.web"/>
 
+	<mvc:annotation-driven enableMatrixVariables="true"></mvc:annotation-driven>
+
 	<!-- 配置多请求数据类型，如json-->
-	<bean id="annotationMethodHandlerAdapter"
+	<!-- <bean id="annotationMethodHandlerAdapter"
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
-				<!--解析json请求数据，将json转换为java对象-->
 				<bean class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
 				
-				<!-- <bean
-					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" /> -->
-					
-				<!-- bean class="org.springframework.http.converter.FormHttpMessageConverter" /-->
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 				
 				<bean
 					class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
@@ -45,7 +44,7 @@
 					class="org.springframework.http.converter.ResourceHttpMessageConverter" />
 			</list>
 		</property>
-	</bean>
+	</bean> -->
 	
 
 	<!-- ViewResolver -->
@@ -54,5 +53,4 @@
 		<property name="prefix" value="/" />
 		<property name="suffix" value=".jsp" />
 	</bean>	
-
 </beans>

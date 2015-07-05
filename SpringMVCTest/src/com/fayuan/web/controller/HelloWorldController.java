@@ -1,4 +1,4 @@
-package com.fayuan.web;
+package com.fayuan.web.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -77,4 +79,12 @@ public class HelloWorldController {
 
         return new ResponseEntity<Map<String, String>>(dummyData, HttpStatus.OK);
     }
+	
+	@RequestMapping(value = "/matrixvariable/{id}", method = RequestMethod.GET)
+	public String select(@PathVariable String id, @MatrixVariable String name, Model model) {
+		model.addAttribute("message", "MatrixVariable");
+		System.out.println("id = " + id + ",  name = " + name);
+		return "index";
+	}
+       
 }
