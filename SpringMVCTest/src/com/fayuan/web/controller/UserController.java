@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fayuan.web.model.User;
-import com.fayuan.web.service.impl.UserService;
+import com.fayuan.web.service.UserService;
 
 @RestController
 @Scope("prototype") //每次都创建一个UserController对象
